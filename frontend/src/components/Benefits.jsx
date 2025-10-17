@@ -1,20 +1,21 @@
 import React from 'react';
 import { MapPin, Zap, Users } from 'lucide-react';
+import { Button } from './ui/button';
 
 const Benefits = () => {
   const benefits = [
     {
-      image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=400&h=500&fit=crop',
-      title: 'Prime Location in Bangalore',
+      image: 'https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600&h=500&fit=crop',
+      title: 'Prime Location in RT Nagar',
       icon: MapPin,
       points: [
-        'Located in the heart of Bangalore business district',
+        'Located in the heart of RT Nagar, Bangalore business district',
         'Easy access to public transportation and major highways',
         'Close to restaurants, cafes, and essential amenities'
       ]
     },
     {
-      image: 'https://images.unsplash.com/photo-1758630737900-a28682c5aa69?w=400&h=500&fit=crop',
+      image: 'https://images.unsplash.com/photo-1758630737900-a28682c5aa69?w=600&h=500&fit=crop',
       title: 'Flexible Solutions',
       icon: Zap,
       points: [
@@ -24,7 +25,7 @@ const Benefits = () => {
       ]
     },
     {
-      image: 'https://images.unsplash.com/photo-1718220216044-006f43e3a9b1?w=400&h=500&fit=crop',
+      image: 'https://images.unsplash.com/photo-1718220216044-006f43e3a9b1?w=600&h=500&fit=crop',
       title: 'Professional Environment',
       icon: Users,
       points: [
@@ -36,18 +37,18 @@ const Benefits = () => {
   ];
 
   return (
-    <div className="py-16 bg-white">
+    <div className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-[#1A1E5E] mb-4">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl lg:text-5xl font-bold text-black mb-4 font-aller">
             Why Choose Laksh Space?
           </h2>
-          <p className="text-lg text-gray-600">
+          <p className="text-xl text-[#807f83] font-aller">
             Professional workspace solutions designed for your success
           </p>
         </div>
 
-        <div className="space-y-16">
+        <div className="space-y-20">
           {benefits.map((benefit, index) => (
             <div 
               key={index} 
@@ -57,25 +58,23 @@ const Benefits = () => {
                 <img
                   src={benefit.image}
                   alt={benefit.title}
-                  className="rounded-lg shadow-lg w-full h-[400px] object-cover"
+                  className="rounded-lg shadow-xl w-full h-[450px] object-cover"
                 />
               </div>
               <div className={index % 2 === 1 ? 'md:order-1' : ''}>
-                <div className="flex items-center mb-4">
-                  <benefit.icon className="w-8 h-8 text-[#FF6B35] mr-3" />
+                <div className="flex items-center mb-6">
+                  <benefit.icon className="w-10 h-10 text-[#46c1be] mr-3" strokeWidth={1.5} />
                 </div>
-                <h3 className="text-3xl font-bold text-[#1A1E5E] mb-6">{benefit.title}</h3>
-                <ul className="space-y-4">
+                <h3 className="text-4xl font-bold text-black mb-6 font-aller">{benefit.title}</h3>
+                <ul className="space-y-4 mb-8">
                   {benefit.points.map((point, i) => (
                     <li key={i} className="flex items-start">
-                      <div className="w-6 h-6 rounded-full bg-[#FF6B35]/10 flex items-center justify-center mr-3 mt-1 flex-shrink-0">
-                        <div className="w-2 h-2 rounded-full bg-[#FF6B35]"></div>
-                      </div>
-                      <span className="text-gray-700 text-lg">{point}</span>
+                      <div className="w-2 h-2 rounded-full bg-[#e30613] mt-2 mr-4 flex-shrink-0"></div>
+                      <span className="text-[#807f83] text-lg font-aller">{point}</span>
                     </li>
                   ))}
                 </ul>
-                <Button className="mt-8 bg-[#1A1E5E] hover:bg-[#2a3a7e] text-white">
+                <Button className="bg-[#e30613] hover:bg-[#c1050f] text-white font-bold px-8 py-6 text-base">
                   Learn More →
                 </Button>
               </div>
@@ -86,7 +85,5 @@ const Benefits = () => {
     </div>
   );
 };
-
-import { Button } from './ui/button';
 
 export default Benefits;
