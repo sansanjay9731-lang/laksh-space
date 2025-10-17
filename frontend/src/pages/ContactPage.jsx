@@ -28,48 +28,48 @@ const ContactPage = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      <div className="max-w-7xl mx-auto px-4 py-16">
-        <h1 className="text-4xl font-bold text-[#1A1E5E] mb-12 text-center">Contact Us</h1>
+      <div className="max-w-7xl mx-auto px-4 py-20">
+        <h1 className="text-5xl font-bold text-black mb-16 text-center font-aller">Contact Us</h1>
         
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-16">
           <div>
-            <h2 className="text-2xl font-semibold text-[#1A1E5E] mb-6">Get in Touch</h2>
-            <p className="text-gray-700 mb-8">
+            <h2 className="text-3xl font-bold text-black mb-6 font-aller">Get in Touch</h2>
+            <p className="text-[#807f83] mb-10 font-aller text-lg">
               Have questions about our office spaces? We're here to help. Reach out to us and we'll 
               respond as soon as possible.
             </p>
             
-            <div className="space-y-6">
+            <div className="space-y-8">
               <div className="flex items-start space-x-4">
-                <Phone className="w-6 h-6 text-[#FF6B35] mt-1" />
+                <Phone className="w-7 h-7 text-[#e30613] mt-1" />
                 <div>
-                  <h3 className="font-semibold text-[#1A1E5E] mb-1">Phone</h3>
-                  <p className="text-gray-700">+91 9972235566</p>
+                  <h3 className="font-bold text-black mb-2 font-aller">Phone</h3>
+                  <p className="text-[#807f83] font-aller">+91 9972235566</p>
                 </div>
               </div>
               
               <div className="flex items-start space-x-4">
-                <Mail className="w-6 h-6 text-[#FF6B35] mt-1" />
+                <Mail className="w-7 h-7 text-[#e30613] mt-1" />
                 <div>
-                  <h3 className="font-semibold text-[#1A1E5E] mb-1">Email</h3>
-                  <p className="text-gray-700">lakshspaceblr@gmail.com</p>
+                  <h3 className="font-bold text-black mb-2 font-aller">Email</h3>
+                  <p className="text-[#807f83] font-aller">lakshspaceblr@gmail.com</p>
                 </div>
               </div>
               
               <div className="flex items-start space-x-4">
-                <MapPin className="w-6 h-6 text-[#FF6B35] mt-1" />
+                <MapPin className="w-7 h-7 text-[#e30613] mt-1" />
                 <div>
-                  <h3 className="font-semibold text-[#1A1E5E] mb-1">Location</h3>
-                  <p className="text-gray-700">Bangalore, Karnataka, India</p>
+                  <h3 className="font-bold text-black mb-2 font-aller">Location</h3>
+                  <p className="text-[#807f83] font-aller">RT Nagar, Bangalore, Karnataka, India</p>
                 </div>
               </div>
             </div>
           </div>
           
-          <div className="bg-gray-50 p-8 rounded-lg">
+          <div className="bg-[#f5f5f5] p-10 rounded-lg">
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label className="block text-sm font-medium text-[#1A1E5E] mb-2">
+                <label className="block text-sm font-bold text-black mb-2 font-aller">
                   Name *
                 </label>
                 <Input
@@ -78,12 +78,12 @@ const ContactPage = () => {
                   value={formData.name}
                   onChange={(e) => setFormData({...formData, name: e.target.value})}
                   placeholder="Your name"
-                  className="w-full"
+                  className="w-full border-gray-300"
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-[#1A1E5E] mb-2">
+                <label className="block text-sm font-bold text-black mb-2 font-aller">
                   Email *
                 </label>
                 <Input
@@ -92,12 +92,12 @@ const ContactPage = () => {
                   value={formData.email}
                   onChange={(e) => setFormData({...formData, email: e.target.value})}
                   placeholder="your@email.com"
-                  className="w-full"
+                  className="w-full border-gray-300"
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-[#1A1E5E] mb-2">
+                <label className="block text-sm font-bold text-black mb-2 font-aller">
                   Phone
                 </label>
                 <Input
@@ -105,12 +105,12 @@ const ContactPage = () => {
                   value={formData.phone}
                   onChange={(e) => setFormData({...formData, phone: e.target.value})}
                   placeholder="+91 XXXXXXXXXX"
-                  className="w-full"
+                  className="w-full border-gray-300"
                 />
               </div>
               
               <div>
-                <label className="block text-sm font-medium text-[#1A1E5E] mb-2">
+                <label className="block text-sm font-bold text-black mb-2 font-aller">
                   Message *
                 </label>
                 <Textarea
@@ -119,13 +119,13 @@ const ContactPage = () => {
                   onChange={(e) => setFormData({...formData, message: e.target.value})}
                   placeholder="Tell us about your requirements..."
                   rows={5}
-                  className="w-full"
+                  className="w-full border-gray-300"
                 />
               </div>
               
               <Button 
                 type="submit"
-                className="w-full bg-[#FF6B35] hover:bg-[#FF5722] text-white"
+                className="w-full bg-[#e30613] hover:bg-[#c1050f] text-white font-bold py-6 text-base"
               >
                 Send Message
               </Button>
