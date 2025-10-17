@@ -75,34 +75,46 @@ const Header = () => {
                   <ChevronDown size={16} className={`transform transition-transform ${solutionsOpen ? 'rotate-180' : ''}`} />
                 </button>
                 
-                {/* Mega Dropdown */}
+                {/* Regus-Style Mega Dropdown */}
                 {solutionsOpen && (
-                  <div className="absolute left-0 top-full pt-2 w-[600px]">
-                    <div className="bg-white border border-gray-200 rounded-lg shadow-2xl p-6">
-                      <h3 className="text-sm font-bold text-[#807f83] uppercase mb-4">Our Solutions</h3>
-                      <div className="grid grid-cols-2 gap-4">
-                        {solutions.map((solution, index) => (
-                          <Link
-                            key={index}
-                            to="/solutions"
-                            className="flex items-start space-x-3 p-3 rounded-md hover:bg-gray-50 transition-colors group/item"
-                          >
-                            <span className="text-2xl">{solution.icon}</span>
-                            <div>
-                              <h4 className="font-bold text-black group-hover/item:text-[#e30613] transition-colors">
-                                {solution.name}
-                              </h4>
-                              <p className="text-sm text-[#807f83]">{solution.desc}</p>
+                  <div className="absolute left-0 top-full pt-2 w-[900px]">
+                    <div className="bg-white border border-gray-200 rounded-lg shadow-2xl p-8">
+                      <div className="grid grid-cols-3 gap-8">
+                        {solutionCategories.map((category, index) => (
+                          <div key={index} className="space-y-4">
+                            {/* Category Header */}
+                            <div className="flex items-center space-x-3 pb-3 border-b border-gray-200">
+                              <category.icon className="w-6 h-6 text-[#e30613]" strokeWidth={1.5} />
+                              <h3 className="font-bold text-black text-lg">{category.title}</h3>
                             </div>
-                          </Link>
+                            
+                            {/* Category Items */}
+                            <div className="space-y-3">
+                              {category.items.map((item, i) => (
+                                <Link
+                                  key={i}
+                                  to="/solutions"
+                                  className="block p-3 rounded-md hover:bg-gray-50 transition-colors group/item"
+                                >
+                                  <h4 className="font-bold text-black group-hover/item:text-[#e30613] transition-colors mb-1">
+                                    {item.name}
+                                  </h4>
+                                  <p className="text-sm text-[#807f83] mb-1">{item.desc}</p>
+                                  <p className="text-xs text-[#46c1be] font-semibold">{item.units}</p>
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
                         ))}
                       </div>
-                      <div className="mt-6 pt-6 border-t border-gray-200">
+                      
+                      {/* Footer CTA */}
+                      <div className="mt-8 pt-6 border-t border-gray-200 text-center">
                         <Link 
                           to="/solutions" 
-                          className="text-[#e30613] font-bold hover:underline"
+                          className="inline-block bg-[#e30613] hover:bg-[#c1050f] text-white font-bold px-8 py-3 rounded-md transition-colors"
                         >
-                          View all solutions →
+                          View All Solutions →
                         </Link>
                       </div>
                     </div>
