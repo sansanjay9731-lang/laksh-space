@@ -2,18 +2,6 @@
   min-height: 100vh;
 }
 
-/* Remove default center alignment */
-.App-header {
-  background-color: #0f0f10;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 /* Smooth scrolling */
 html {
   scroll-behavior: smooth;
@@ -24,7 +12,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom scrollbar */
+/* Custom scrollbar - Regus style */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -34,10 +22,27 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1A1E5E;
+  background: #000000;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #FF6B35;
+  background: #e30613;
+}
+
+/* Regus color utilities */
+.regus-red {
+  color: #e30613;
+}
+
+.regus-red-bg {
+  background-color: #e30613;
+}
+
+.regus-gray-text {
+  color: #807f83;
+}
+
+.regus-teal {
+  color: #46c1be;
 }
