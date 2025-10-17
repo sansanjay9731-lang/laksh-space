@@ -1,10 +1,20 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, Menu, X } from 'lucide-react';
+import { Phone, Mail, Menu, X, ChevronDown } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [solutionsOpen, setSolutionsOpen] = useState(false);
+
+  const solutions = [
+    { name: 'Private Offices', icon: '🏢', desc: 'Ready-to-use offices for teams' },
+    { name: 'Custom Offices', icon: '✨', desc: 'Customized to your brand' },
+    { name: 'Meeting Rooms', icon: '📋', desc: 'Professional meeting spaces' },
+    { name: 'Single Seater', icon: '👤', desc: 'Individual workspace' },
+    { name: '2 Seater Cabin', icon: '👥', desc: 'Perfect for small teams' },
+    { name: '6 Seater Cabin', icon: '👨‍👩‍👧‍👦', desc: 'Growing team spaces' }
+  ];
 
   return (
     <header className="bg-white text-black shadow-sm sticky top-0 z-50">
@@ -36,6 +46,53 @@ const Header = () => {
               <Link to="/" className="hover:text-[#e30613] transition-colors font-medium text-black">
                 Home
               </Link>
+              
+              {/* Solutions Dropdown */}
+              <div 
+                className="relative group"
+                onMouseEnter={() => setSolutionsOpen(true)}
+                onMouseLeave={() => setSolutionsOpen(false)}
+              >
+                <button className="flex items-center space-x-1 hover:text-[#e30613] transition-colors font-medium text-black">
+                  <span>Solutions</span>
+                  <ChevronDown size={16} className={`transform transition-transform ${solutionsOpen ? 'rotate-180' : ''}`} />
+                </button>
+                
+                {/* Mega Dropdown */}
+                {solutionsOpen && (
+                  <div className="absolute left-0 top-full pt-2 w-[600px]">
+                    <div className="bg-white border border-gray-200 rounded-lg shadow-2xl p-6">
+                      <h3 className="text-sm font-bold text-[#807f83] uppercase mb-4">Our Solutions</h3>
+                      <div className="grid grid-cols-2 gap-4">
+                        {solutions.map((solution, index) => (
+                          <Link
+                            key={index}
+                            to="/solutions"
+                            className="flex items-start space-x-3 p-3 rounded-md hover:bg-gray-50 transition-colors group/item"
+                          >
+                            <span className="text-2xl">{solution.icon}</span>
+                            <div>
+                              <h4 className="font-bold text-black group-hover/item:text-[#e30613] transition-colors">
+                                {solution.name}
+                              </h4>
+                              <p className="text-sm text-[#807f83]">{solution.desc}</p>
+                            </div>
+                          </Link>
+                        ))}
+                      </div>
+                      <div className="mt-6 pt-6 border-t border-gray-200">
+                        <Link 
+                          to="/solutions" 
+                          className="text-[#e30613] font-bold hover:underline"
+                        >
+                          View all solutions →
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </div>
+              
               <Link to="/about" className="hover:text-[#e30613] transition-colors font-medium text-black">
                 About
               </Link>
@@ -67,6 +124,13 @@ const Header = () => {
                 Home
               </Link>
               <Link 
+                to="/solutions" 
+                className="block hover:text-[#e30613] transition-colors font-medium text-black"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Solutions
+              </Link>
+              <Link 
                 to="/about" 
                 className="block hover:text-[#e30613] transition-colors font-medium text-black"
                 onClick={() => setMobileMenuOpen(false)}
@@ -80,7 +144,7 @@ const Header = () => {
               >
                 Contact
               </Link>
-              <div className="pt-2">
+              <div className="pt-2 border-t border-gray-200">
                 <a href="tel:+919972235566" className="flex items-center space-x-2 mb-2 text-gray-700">
                   <Phone size={16} />
                   <span>+91 9972235566</span>
