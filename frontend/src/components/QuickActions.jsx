@@ -31,18 +31,18 @@ const QuickActions = () => {
   ];
 
   return (
-    <div className="max-w-7xl mx-auto px-4 py-12">
+    <div className="max-w-7xl mx-auto px-4 py-16">
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {actions.map((action, index) => (
           <Card 
             key={index} 
-            className="hover:shadow-lg transition-all duration-300 cursor-pointer border-2 hover:border-[#FF6B35] group"
+            className="hover:shadow-xl transition-all duration-300 cursor-pointer border border-gray-200 hover:border-[#e30613] group bg-white"
           >
-            <CardContent className="p-6">
-              <action.icon className="w-12 h-12 text-[#1A1E5E] mb-4 group-hover:text-[#FF6B35] transition-colors" />
-              <h3 className="text-lg font-semibold text-[#1A1E5E] mb-2">{action.title}</h3>
-              <p className="text-gray-600 text-sm mb-4">{action.description}</p>
-              <div className="text-[#FF6B35] font-medium text-sm group-hover:underline">
+            <CardContent className="p-8">
+              <action.icon className="w-12 h-12 text-[#46c1be] mb-4 group-hover:text-[#e30613] transition-colors" strokeWidth={1.5} />
+              <h3 className="text-lg font-bold text-black mb-2 font-aller">{action.title}</h3>
+              <p className="text-[#807f83] text-sm mb-4 font-aller">{action.description}</p>
+              <div className="text-[#e30613] font-bold text-sm group-hover:underline font-aller">
                 {action.action} →
               </div>
             </CardContent>
