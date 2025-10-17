@@ -1,19 +1,36 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Phone, Mail, Menu, X, ChevronDown } from 'lucide-react';
+import { Phone, Mail, Menu, X, ChevronDown, Building2, Users, Briefcase, Home } from 'lucide-react';
 import { Button } from './ui/button';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [solutionsOpen, setSolutionsOpen] = useState(false);
 
-  const solutions = [
-    { name: 'Private Offices', icon: '🏢', desc: 'Ready-to-use offices for teams' },
-    { name: 'Custom Offices', icon: '✨', desc: 'Customized to your brand' },
-    { name: 'Meeting Rooms', icon: '📋', desc: 'Professional meeting spaces' },
-    { name: 'Single Seater', icon: '👤', desc: 'Individual workspace' },
-    { name: '2 Seater Cabin', icon: '👥', desc: 'Perfect for small teams' },
-    { name: '6 Seater Cabin', icon: '👨‍👩‍👧‍👦', desc: 'Growing team spaces' }
+  const solutionCategories = [
+    {
+      title: 'Office Space',
+      icon: Building2,
+      items: [
+        { name: 'Single Seater', desc: 'Individual private workspace', units: '10 available' },
+        { name: '2 Seater Cabin', desc: 'Perfect for partnerships', units: '4 available' },
+        { name: '6 Seater Cabin', desc: 'Growing team space', units: '1 available' }
+      ]
+    },
+    {
+      title: 'Custom Offices',
+      icon: Home,
+      items: [
+        { name: 'Customized Office', desc: 'Fully branded workspace', units: '1 available' }
+      ]
+    },
+    {
+      title: 'Meeting Rooms',
+      icon: Users,
+      items: [
+        { name: 'Meeting Room', desc: 'Professional meeting space (6-8 capacity)', units: '1 available' }
+      ]
+    }
   ];
 
   return (
