@@ -10,7 +10,7 @@ const Footer = () => {
           {/* Company Info */}
           <div>
             <img 
-              src="https://customer-assets.emergentagent.com/job_laksh-headquarters/artifacts/rmaboak3_Laksh%20Logo%20%2836%20x%2018%20in%29.png" 
+              src="/laksh-logo.png" 
               alt="Laksh Space" 
               className="h-10 w-auto mb-4"
             />
