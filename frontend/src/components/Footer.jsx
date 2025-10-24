@@ -9,10 +9,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           {/* Company Info */}
           <div>
-            <h3 className="text-2xl font-bold mb-4 font-aller">
-              <span className="text-white">Laksh</span>
-              <span className="text-[#e30613]">Space</span>
-            </h3>
+            <img 
+              src="https://customer-assets.emergentagent.com/job_laksh-headquarters/artifacts/rmaboak3_Laksh%20Logo%20%2836%20x%2018%20in%29.png" 
+              alt="Laksh Space" 
+              className="h-10 w-auto mb-4"
+            />
             <p className="text-[#adb0b2] mb-4 font-aller">
               Professional private office cabins in RT Nagar, Bangalore.
             </p>
