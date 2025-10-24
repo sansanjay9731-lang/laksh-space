@@ -5,11 +5,12 @@ import { Button } from './ui/button';
 
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [solutionsOpen, setSolutionsOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
 
-  const solutionCategories = [
+  const navigationItems = [
     {
-      title: 'Office Space',
+      id: 'office-space',
+      label: 'Office Space',
       icon: Building2,
       items: [
         { name: 'Single Seater', desc: 'Individual private workspace', units: '10 available' },
@@ -18,14 +19,16 @@ const Header = () => {
       ]
     },
     {
-      title: 'Custom Offices',
+      id: 'custom-offices',
+      label: 'Custom Offices',
       icon: Home,
       items: [
         { name: 'Customized Office', desc: 'Fully branded workspace', units: '1 available' }
       ]
     },
     {
-      title: 'Meeting Rooms',
+      id: 'meeting-rooms',
+      label: 'Meeting Rooms',
       icon: Users,
       items: [
         { name: 'Meeting Room', desc: 'Professional meeting space (6-8 capacity)', units: '1 available' }
