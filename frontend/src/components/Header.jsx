@@ -53,9 +53,12 @@ const Header = () => {
         {/* Main navigation */}
         <div className="px-4 py-4">
           <div className="flex items-center justify-between">
-            <Link to="/" className="text-2xl font-bold font-aller">
-              <span className="text-black">Laksh</span>
-              <span className="text-[#e30613]">Space</span>
+            <Link to="/" className="flex items-center">
+              <img 
+                src="https://customer-assets.emergentagent.com/job_laksh-headquarters/artifacts/rmaboak3_Laksh%20Logo%20%2836%20x%2018%20in%29.png" 
+                alt="Laksh Space" 
+                className="h-12 w-auto"
+              />
             </Link>
 
             {/* Desktop menu */}
