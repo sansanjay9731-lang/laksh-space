@@ -78,7 +78,8 @@ const Header = () => {
                   onMouseEnter={() => setActiveDropdown(navItem.id)}
                   onMouseLeave={() => setActiveDropdown(null)}
                 >
-                  <button className="flex items-center space-x-1 hover:text-[#e30613] transition-colors font-medium text-black">
+                  <button className="flex items-center space-x-2 hover:text-[#e30613] transition-colors font-medium text-black">
+                    <navItem.icon size={18} strokeWidth={1.5} />
                     <span>{navItem.label}</span>
                     <ChevronDown size={16} className={`transform transition-transform ${activeDropdown === navItem.id ? 'rotate-180' : ''}`} />
                   </button>
