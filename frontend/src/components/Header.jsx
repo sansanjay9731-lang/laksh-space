@@ -152,13 +152,19 @@ const Header = () => {
               >
                 Home
               </Link>
-              <Link 
-                to="/solutions" 
-                className="block hover:text-[#e30613] transition-colors font-medium text-black"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                Solutions
-              </Link>
+              
+              {navigationItems.map((navItem) => (
+                <div key={navItem.id}>
+                  <Link 
+                    to="/solutions" 
+                    className="block hover:text-[#e30613] transition-colors font-medium text-black"
+                    onClick={() => setMobileMenuOpen(false)}
+                  >
+                    {navItem.label}
+                  </Link>
+                </div>
+              ))}
+              
               <Link 
                 to="/about" 
                 className="block hover:text-[#e30613] transition-colors font-medium text-black"
